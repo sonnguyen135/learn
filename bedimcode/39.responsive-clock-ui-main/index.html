@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    
+    <!--==================== BOXICONS ====================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main class="main">
+        <section class="datetime grid container">
+            <div class="clock">
+                <div class="clock__container grid">
+                    <div class="clock__content grid">
+                        <div class="clock__circle">
+                            <span class="clock__twelve"></span>
+                            <span class="clock__three"></span>
+                            <span class="clock__six"></span>
+                            <span class="clock__nine"></span>
+        
+                            <div class="clock__rounded"></div>
+                            <div class="clock__hour" id="clock-hour"></div>
+                            <div class="clock__minutes" id="clock-minutes"></div>
+                            <div class="clock__second" id="clock-second"></div>
+        
+                            <!-- Dark/light button -->
+                            <div class="clock__theme" id="change-theme">
+                                <i class='bx bxs-moon' id="theme-button"></i>
+                            </div>
+                        </div>
+        
+                        <div>
+                            <div class="clock__text">
+                                <div class="clock__text-hour" id="text-hour">09:</div>
+                                <div class="clock__text-minutes" id="text-minutes">40</div>
+                                <div class="clock__text-ampm" id="text-ampm">AM</div>
+                            </div>
+        
+                            <div class="clock__date">
+                                <span id="date-day">29</span>
+                                <span id="date-month">Dec,</span>
+                                <span id="date-year">2021</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://www.youtube.com/c/Bedimcode/" target="_blank" class="clock__logo">Bedimcode</a>
+                </div>
+            </div>
+            <div class="calender" id="calender">
+                <div class="calender__container grid">
+                    <div class="calender__content grid">
+                        <div class="calender__header">
+                            <div class="nav grid">
+                                <div class="nav__logo">
+                                    Calender
+                                </div>
+                                <div class="nav__panel">
+                                    <div class="nav__panel-months">
+                                        <i class='bx bx-chevron-left nav__panel-icon pre-month-button'></i>
+                                        <span class="nav__panel-month">February</span>
+                                        <i class='bx bx-chevron-right nav__panel-icon next-month-button'></i>
+                                    </div>
+                                    <span class="nav__panel-year">2018</span>
+                                </div>
+                                <div class="nav__type">
+                                    <span class="nav__type-item active">Month</span>
+                                    <span class="nav__type-item">Week</span>
+                                    <span class="nav__type-item">Day</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calender__data grid">
+                            <div class="calender__day grid">
+                                <span class="calender__day-name">Mon</span>
+                                <span class="calender__day-name">Tue</span>
+                                <span class="calender__day-name">Wed</span>
+                                <span class="calender__day-name">Thu</span>
+                                <span class="calender__day-name">Fri</span>
+                                <span class="calender__day-name">Sat</span>
+                                <span class="calender__day-name">Sun</span>
+                            </div>
+                            <div class="calender__date grid">
+                                <div class="calender__date-name pre-month" id="day1"><span>28</span></div>
+                                <div class="calender__date-name pre-month" id="day2"><span>29</span></div>
+                                <div class="calender__date-name pre-month" id="day3"><span>30</span></div>
+                                <div class="calender__date-name pre-month" id="day4"><span>31</span></div>
+                                <div class="calender__date-name" id="day5"><span>1 Feb</span></div>
+                                <div class="calender__date-name" id="day6">
+                                    <span>2</span>
+                                    <div class="calender__event">
+                                        <div class="calender__event-personal">
+                                            HaHa Birthday
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calender__date-name" id="day7"><span>3</span></div>
+                                <div class="calender__date-name" id="day8"><span>4</span></div>
+                                <div class="calender__date-name" id="day9"><span>5</span></div>
+                                <div class="calender__date-name" id="day10"><span>6</span></div>
+                                <div class="calender__date-name" id="day11"><span>7</span></div>
+                                <div class="calender__date-name" id="day12"><span>8</span></div>
+                                <div class="calender__date-name" id="day13"><span>9</span></div>
+                                <div class="calender__date-name" id="day14"><span>10</span></div>
+                                <div class="calender__date-name" id="day15"><span>11</span></div>
+                                <div class="calender__date-name" id="day16"><span>12</span></div>
+                                <div class="calender__date-name" id="day17"><span>13</span></div>
+                                <div class="calender__date-name" id="day18"><span>14</span></div>
+                                <div class="calender__date-name" id="day19"><span>15</span></div>
+                                <div class="calender__date-name" id="day20"><span>16</span></div>
+                                <div class="calender__date-name" id="day21"><span>17</span></div>
+                                <div class="calender__date-name" id="day22"><span>18</span></div>
+                                <div class="calender__date-name" id="day23"><span>19</span></div>
+                                <div class="calender__date-name" id="day24"><span>20</span></div>
+                                <div class="calender__date-name" id="day25"><span>21</span></div>
+                                <div class="calender__date-name" id="day26"><span>22</span></div>
+                                <div class="calender__date-name" id="day27"><span>23</span></div>
+                                <div class="calender__date-name" id="day28"><span>24</span></div>
+                                <div class="calender__date-name" id="day29"><span>25</span></div>
+                                <div class="calender__date-name" id="day30"><span>26</span></div>
+                                <div class="calender__date-name" id="day31"><span>27</span></div>
+                                <div class="calender__date-name" id="day32"><span>28</span></div>
+                                <div class="calender__date-name next-month" id="day33"><span>1</span></div>
+                                <div class="calender__date-name next-month" id="day34"><span>2</span></div>
+                                <div class="calender__date-name next-month" id="day35"><span>3</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="calender__list">
+                        
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="assets/js/calender.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+
+        $('#calender').sCalender({
+            month: 11,
+            year: 2021
+        });
+    </script>
+</body>
+</html>

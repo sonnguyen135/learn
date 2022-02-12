@@ -1,0 +1,92 @@
+.header{
+    height: var(--header-height);
+    position: fixed;
+    background: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+        display:flex;
+        width: 1.5rem;
+    }
+
+
+
+    @media screen and (max-width: 767px){
+        &__menu{
+            position: fixed;
+            top: -100%;
+            left: 0;
+            right: 0;
+            height : 40%;
+            padding: 4rem 0 3rem;
+            text-align: center;
+            background-color: var(--body-color);
+            transition: .4s;
+        }
+
+        &__close{
+            position: absolute;
+            font-size: 1.5rem;
+            top: 1rem;
+            right: 1rem;
+            color: var(--white-color);
+            cursor: pointer;
+        }
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    &__link{
+        text-transform: uppercase;
+        font-weight: var(--font-semi-bold);
+        color: transparent;
+        background: var(--text-gradient);
+        font-size: var(--h2-font-size);
+        background-clip: text;
+        -webkit-background-clip: text;
+        transition: .4s;
+        
+        &:hover{
+            color: var(--white-color);
+        }
+    }
+
+
+
+    &__toggle{
+        color: var(--white-color);
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .active{
+        background: var(--white-color);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+.showMenu{
+    top: 0;
+}
+
+/* Change background header */
+.scroll-header {
+    background-color: var(--body-color);
+}

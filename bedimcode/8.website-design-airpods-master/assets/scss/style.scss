@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Variables */
+
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
+
+/* Header height */
+:root{
+    --header-height: 3rem;
+     @media screen and (min-width: 768px) {
+         --header-height: 4rem;
+     }
+}
+
+/* Color Variables*/
+:root{
+    --first-color: #787879;
+    --second-color: #0071E3;
+    --white-color: #FFF;
+}
+
+/* Font */
+:root{
+    --body-font: 'Roboto', sans-serif;
+
+    --bigest-font-size: 3.5rem;
+    --bigger-font-size : 2.25rem;
+    --big-font-size: 1.625rem;
+    --normal-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+
+    @media screen and (min-width: 768px) {
+        --bigest-font-size: 8rem;
+        --bigger-font-size : 4.5rem;
+        --big-font-size: 2.5rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: 0.938rem;
+    }
+}
+
+
+/* BASE */
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+ul{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+    color: var(--first-color);
+}
+
+body{
+    font-family: var(--body-font);
+    margin-top: var(--header-height);
+}
+
+
+
+/* LAYOUTS */
+.bd-grid{
+    max-width: 1200px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.l-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: #fff;
+    z-index: 100;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+
+    &__logo{
+        font-weight: $font-bold;
+    }
+
+    &__menu{
+        @media screen and (max-width: 767px){
+            position: fixed;
+            top: -100%;
+            left: 0;
+            right: 0;
+            height: 20%;
+            padding: 2rem 1rem;
+            border-bottom:1px solid #000;
+            background-color: #fff;
+            z-index: 101;
+            transition: all 0.5s;
+        }
+    }
+
+    &__item{
+        margin-bottom: 1.5rem;
+    }
+
+    &__link:hover{
+        color: var(--second-color);
+    }
+
+    &__actions{
+        display: flex;
+        align-items: center;
+    }
+
+    &__toggle{
+        cursor: pointer;
+        margin-right: 1rem;
+        width: 1.8rem;
+        transition: all 0.5s;
+    }
+
+    &__btn{
+        padding: 0.375rem 1rem;
+        color: var(--white-color);
+        background-color: var(--second-color);
+        border-radius: 1rem;
+    }
+
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+.show{
+    top: var(--header-height);
+}
+
+
+.home{
+    height: calc(100vh - var(--header-height));
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    grid-template-areas:
+        "data"
+        "img"
+        "scroll";
+    row-gap: 1.5rem;
+    align-content: space-between;
+    align-items: center;
+    justify-items: center;
+
+    &__data{
+        grid-area: data;
+        text-align: center;
+        padding-top: 3.5rem;
+    }
+
+    &__title{
+        font-size: var(--bigest-font-size);
+        font-weight: $font-regular;
+        margin-bottom: 1.5rem;
+    }
+
+    &__description{
+        font-size: var(--normal-font-size);
+    }
+
+    &__img{
+        grid-area: img;
+        display: flex;
+        column-gap: 1rem;
+        justify-content: center;
+        & img{
+            width: 81px;
+            height: 177px;
+        }
+    }
+
+    &__scroll{
+        grid-area: scroll;
+        display: block;
+        text-align:center;
+
+        &-text{
+            display: block;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        &-icon{
+            width: 2rem;
+        }
+    }
+}
+
+.airpod1{
+    animation: airpod1 3s ease-in-out infinite;
+    @keyframes airpod1 {
+        50%{
+            transform: translateY(-6%);
+        }
+    }
+}
+
+.airpod2{
+    animation: airpod2 3s ease-in-out infinite;
+
+    @keyframes airpod2 {
+        50%{
+            transform: translateY(6%);
+        }
+    }
+}
+
+.l-section{
+    height: calc(100vh - var(--header-height));
+}
+
+.detail{
+    display: grid;
+    grid-template-columns: 113px max-content;
+    justify-content: center;
+    align-items: center;
+
+    &__img{
+        width: 218px;
+        animation: airpod 3s ease-in-out infinite;
+
+        @keyframes airpod{
+            50%{
+                transform: translateY(6%);
+            }
+        }
+    }
+
+    &__content{
+        text-align: center;
+    }
+
+    &__box{
+        margin-bottom: 2.5rem;
+    }
+
+    &__initial{
+        font-size: var(--smaller-font-size);
+    }
+
+    &__title{
+        font-weight: $font-regular;
+        font-size: var(--bigger-font-size);
+
+        & span{
+            margin-left: 8px;
+            font-size: var(--big-font-size);
+        }        
+    }
+
+    &__description{
+        font-size: var(--smaller-font-size);
+    }
+}
+
+@media screen and (min-width: 768px){
+    body{
+        margin: 0;
+    }
+
+    .nav{
+
+        &__toggle{
+            display: none;
+        }
+
+        &__menu{
+            flex: 1;
+        }
+
+        &__list{
+            display: flex;
+            height: var(--header-height);
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        &__item{
+            margin-bottom: 0;
+            margin-right: 1.5rem;
+        }
+    }
+
+    .home{
+        height: 100vh;
+        grid-template-rows: 80% 10%;
+        grid-template-columns: min-content;
+        grid-template-areas: "data img"
+                             "scroll scroll";
+        align-content: flex-end;
+        justify-content: center;
+        column-gap: 4rem;
+        &__data{
+            grid-area: data;
+            padding:0;
+            align-self: center;
+        }
+
+        &__scroll{
+            grid-area: scroll;
+            width: max-content;
+            padding-bottom: 2rem;
+        }
+
+        &__img img {
+            width: 114px;
+            height: 248px;
+            align-self: center;
+        }
+
+        &__description{
+            text-align: left;
+            padding-right: 5rem;
+        }
+    }
+
+    .l-section{
+    }
+
+    .detail{
+        column-gap: 4rem;
+        grid-template-columns: 158px max-content;
+        &__img{
+            width: 300px;
+        }
+    }
+
+
+}
+
+@media screen and (min-width: 1200px){
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

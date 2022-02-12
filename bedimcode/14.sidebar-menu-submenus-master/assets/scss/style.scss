@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Variables */
+:root{
+    --nav-width: 92px;
+
+    /* Colors */
+    --first-color: #0C5DF4;
+    --bg-color: #12192C;
+    --sub-color: #B6CEFC;
+    --white-color: #FFF;
+
+    /* Font */
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+}
+
+/* BASE */
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    font-family: var(--body-font);
+    transition: .5s;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* LAYOUTS */
+.app{
+    padding: 2rem 0 0 6.75rem;
+    position: relative;
+}
+
+.l-navbar{
+    position: fixed;
+    width: var(--nav-width) ;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 1.5rem 1.5rem 2rem;
+    // align-items: center;
+    background-color: var(--bg-color);
+    z-index: 100;
+    color: var(--white-color);
+    transition: .5s;
+    
+}
+
+.expander{
+    width: calc(var(--nav-width) + 9.25rem);
+    overflow-y: auto;
+    .nav{
+        &__name,&__logo{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+
+    &__brand{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    &__toggle{
+        font-size: 1.25rem;
+        padding: .75rem;
+        cursor: pointer;
+        min-width: 20px;
+    }
+
+    &__logo{
+        color: var(--white-color);
+        font-weight: 600;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__item{
+        position: relative;
+        margin-bottom: 1rem;
+        padding: .75rem;
+        border-radius: .5rem;
+        &.active,&:hover{
+            background-color: var(--first-color);
+        }      
+        
+    }
+
+    &__link{
+        display: grid;
+        grid-template-columns: 20px max-content 1fr;
+        column-gap: .75rem;
+        align-items: center;
+        color: var(--white-color);
+        position: relative;
+    }
+
+    &__name{
+        font-size: var(--small-font-size);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s
+    }
+
+    &__icon {
+        font-size: 1.25rem;
+    }
+
+    &__collapse{
+       justify-self: flex-end;
+       transition: all .5s
+    }
+
+    //Mặc định set display none , height 0 cho submenu 
+    &__submenu{
+        transition: all .8s;
+        overflow: hidden; 
+        padding: .75rem 2rem;
+        display: none;
+        height: 0;
+
+        //Chế độ khi không mở sibar to thì hover vào hiện submenu ra
+        .nav__item:hover &{
+            left: 100%;
+            top: 0;
+            position: absolute;
+            display: block;
+            height: auto;
+            z-index: 200;   
+            background-color: var(--bg-color);
+            border-radius: .5rem;
+        }
+
+         //Tắt hover khi đã mở to sidebar
+        .expander .nav__item:hover &{
+            left: unset;
+            top: unset;
+            position: unset;
+            height: 0;
+            background-color: unset;
+        }
+        
+    }
+
+    //chuyển display submenu về block khi expander
+    .expander &__submenu{
+        display: block;
+    }
+
+    .rotate{
+        transform: rotate(180deg);
+    }
+
+    &__sublink{
+        color: var(--sub-color);
+        font-size: var(--small-font-size);
+    }
+
+}
+

@@ -1,0 +1,45 @@
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body,button,input{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body{
+    color: var(--text-color);
+    background-color: var(--body-color);
+    transition: .2s;
+}
+
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+h1,h2,h3,h4{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

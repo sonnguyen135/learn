@@ -1,0 +1,261 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root{
+    --header-height: 3rem;
+    
+    /*===== Colors =====*/
+    --first-color: #5B65F5;
+    --first-color-light: #C4C7F5;
+    --dark-color: #0E1026;
+    --white-color: #FBFBFB;
+    
+    /*===== Font and typography =====*/
+    --body-font: 'Open Sans', sans-serif;
+    --nav-name-font-size: 1.5rem;
+    --normal-font-size: .938rem;
+
+    @media screen and (min-width: 768px){
+        --header-height: 4rem;
+
+        --nav-name-font-size: 1rem;
+        --normal-font-size: 1rem;
+    }
+
+    /*===== z index =====*/
+    --z-fixed: 100;
+}
+
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+body{
+    margin-top: var(--header-height);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: 600;
+}
+
+.header{
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    z-index: 100;
+
+    &__toggle{
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+}
+
+.nav{
+    @media screen and (max-width: 767px){
+        position: fixed;
+        top: 0;
+        left: -100%;
+        bottom: 0;
+        width: 80%;
+        background-color: var(--first-color);
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        transition: .5s;
+
+        &__brand{
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        &__name{
+            font-size: var(--nav-name-font-size);
+            color: var(--white-color);
+            display:block;
+        }
+    
+        &__item{
+            margin-bottom: 2rem;
+        }
+      
+    }
+    
+    &__link{
+        display: flex;
+        justify-content: space-between;
+        color: var(--first-color-light);
+        align-items: center;
+       
+    }
+
+    &__img{
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 1rem;
+
+        & img{
+            width: 70px;
+        }
+
+    }
+
+    .active,[class*="__link"]:hover{
+        color: #fff;
+    }
+}
+
+.show{
+    left: 0;
+}
+
+.dropdown{
+
+    &__icon{
+        font-size: 1.3rem;
+        transition: .5s;
+    }
+    &__menu{
+        display: none;
+        margin: 1rem 0 0 1rem;
+    }
+
+    &__item{
+        margin: 1rem 0;
+    }
+
+    &__link{
+        color: var(--first-color-light);
+    }
+
+    &:hover &__menu{
+        display: block;
+    }
+
+    &:hover &__icon{
+        transform: rotate(180deg);
+    }
+}
+
+@media screen and (min-width: 768px){
+    .header{
+        &__logo,&__toggle{
+            display: none;
+        }
+    }
+
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        z-index: 101;
+
+        &__brand{
+            display: flex;
+            height:100%;
+            align-items: center;
+        }
+
+        &__img{
+            margin: 0 .5rem 0 0;
+            width: 40px;
+            height: 40px;
+
+            & img{
+                width: 46px;
+            }
+        }
+
+        &__list{
+            display: flex;
+        }
+
+        &__name{
+            display: block;
+        }
+
+        &__item{
+            margin: 0 1.5rem;
+            padding: 1.4rem 0;
+        }
+
+        &__link{
+            color: var(--dark-color);
+        }
+
+        .active,[class*="__link"]:hover{
+            color: var(--first-color);
+        }
+        
+    }
+
+    .dropdown{
+        &__menu{
+            position: absolute;
+            top: -100%;
+            margin:0;
+            background-color: #fff;
+            border-radius: 0 0 .5rem .5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            padding: .5rem 1.5rem;
+            margin: 0;
+            z-index: 99;
+            display: block;
+            transition: .5s;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &__item{
+            margin: .5rem 0;
+        }
+
+        &__link{
+            color: var(--dark-color);
+        }
+
+        &:hover &__menu{
+            visibility: visible;
+            top: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .nav{
+        max-width: 1024px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

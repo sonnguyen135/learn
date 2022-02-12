@@ -1,0 +1,20 @@
+@mixin flex-row-gap($gap){
+    & > *{
+        margin-top: $gap;
+    }
+
+    & > *:first-child{
+        margin-top: 0;
+    }
+}
+
+@mixin flex-column-gap($gap){
+    & > *{
+        margin-left: $gap;
+    }
+
+    & > *:first-child{
+        margin-left: 0;
+    }
+}
+

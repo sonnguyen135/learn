@@ -1,0 +1,38 @@
+.button{
+    display: inline-block;
+    background-color: var(--first-color);
+    padding: .75rem 1.5rem;
+    color: #1A1A1A;
+    border-radius: 3rem;
+    font-weight: var(--font-semi-bold);
+    transition: .3s;
+
+    &:hover{
+        background-color: var(--first-color-alt);
+    }
+
+    &-link{
+        background: none;
+        color: var(--title-color);
+        padding: 0;
+
+        &:hover{
+            background: none;
+        }
+    }
+
+    &-flex{
+        display: flex;
+        align-items: center;
+        column-gap: .25rem;
+        padding: .75rem 1rem;
+    }
+
+    &__header{
+        display: none;
+    }
+
+    &__icon{
+        font-size: 1.5rem;
+    }
+}

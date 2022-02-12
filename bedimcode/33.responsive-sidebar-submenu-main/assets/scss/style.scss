@@ -1,0 +1,318 @@
+/*========== GOOGLE FONTS ==========*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*========== VARIABLES CSS ==========*/
+:root{
+    --header-height: 3.5rem;
+    --nav-width: 219px;
+
+    /*========== Colors ==========*/
+    --first-color: #6923D0;
+    --first-color: purple;
+    --first-color-light: #F4F0FA;
+    --title-color: #19181B;
+    --text-color: #58555E;
+    --text-color-light: #A5A1AA;
+    --body-color: #F9F6FD;
+    --container-color: #FFFFFF;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    --normal-font-size: .938rem;
+    --small-font-size: .75rem;
+    --smaller-font-size: .75rem;
+
+    @media screen and (min-width: 1024px){
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-fixed: 100;
+}
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    margin-top: var(--header-height);
+    background-color: var(--body-color);
+    padding: 1rem 1rem 0;
+    color: var(--text-color);
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*BASE*/
+.header{
+    height: var(--header-height);
+    background-color: var(--container-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0 1rem;
+    box-shadow: 0 1px 0 rgba(22,8,43,.1);
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__logo {
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+        display: none;
+    }
+
+    &__img{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    &__search{
+        background-color: var(--first-color-light);
+        padding: .4rem .75rem;
+        border-radius: .25rem;
+        display: flex;
+    }
+
+    &__input{
+        border: none;
+        outline: none;
+        width: 100%;
+        background-color: transparent;
+        padding: 1px 2px;
+
+        &::placeholder{
+            font-family: var(--body-font);
+            color: var(--text-color);
+        }
+    }
+
+    &__icon, &__toggle{
+        font-size: 1.2rem;
+    }
+
+    &__toggle{
+        cursor: pointer;
+    }
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    padding: 1rem 1rem 0;
+    background-color: var(--container-color);
+    z-index: 101;
+    box-shadow: 1px 0 0 rgba(22,8,43,.1); 
+    height: 100vh;
+    transition: .4s;
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding-bottom: 3rem;
+        overflow: auto;
+        scrollbar-width: none;
+        
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__logo{
+        font-weight: var(--font-semi-bold);
+        margin-bottom: 2.5rem;
+    }
+
+
+
+    &__link{
+        display: flex;
+        align-items: center;
+        color: var(--text-color);
+
+        &:hover{
+            color: var(--first-color);
+        }
+    }
+
+    &__icon{
+        font-size: 1.2rem;
+        margin-right: .5rem;
+    }
+
+    &__list{
+        display: grid;
+        row-gap: 1.5rem;
+    }
+
+    &__title{
+        margin-top: 1rem;
+
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+
+    &__subtitle{
+        font-size: var(--normal-font-size);
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        color: var(--text-color-light);
+    }
+
+    &__name{
+        font-size: var(--small-font-size);
+        font-weight: var(--font-medium);
+        white-space: nowrap;
+    }
+
+    &__dropdown{
+        max-height: 21px;
+        overflow: hidden;
+        transition: .4s;
+        &-icon{
+            margin-left: auto;
+            transition: .4s;
+        }
+
+        &:hover{
+            transition: .4s;
+            max-height: 100rem;
+        }
+
+        &:hover &-icon{
+            transform: rotate(180deg);
+        }
+
+        
+    }
+
+    .submenu{
+        background-color: var(--first-color-light);
+        border-radius: .25rem;
+        margin-top: 1rem;
+        display: grid;
+        row-gap: .5rem;
+        padding: .75rem 2.5rem .75rem 1.8rem;
+
+        &__item{
+            font-size: var(--small-font-size);
+        }
+
+        &__link{
+            color: var(--text-color);
+            font-size: var(--small-font-size);
+            font-weight: var(--font-medium);
+
+            &:hover{
+                color: var(--first-color);
+            }
+        }
+    }
+
+    &__logout{
+        margin-top: 5rem;
+    }
+}
+
+.showMenu{
+    left: 0;
+}
+
+.active{
+    color: var(--first-color);
+}
+
+@media screen and (min-width: 768px){
+    body {
+        padding: 1rem 3rem 0 6rem;
+    }
+    .header{
+        height: 4rem;
+        padding: 0 3rem 0 6rem;
+
+        &__toggle{
+            display: none;
+        }
+
+        &__logo{
+            display: block;
+        }
+
+        &__img{
+            width: 40px;
+            height: 40px;
+            order: 1;
+        }
+
+        &__search {
+            width: 300px;
+            padding: .55rem .75rem;
+        }
+    }
+
+    .nav {
+        left: 0;
+        padding: 1.2rem 1.5rem 0;
+        width: 68px;
+        overflow: hidden;
+
+        &__list {
+            row-gap: 1.7rem;
+        }
+
+        &:hover{
+            width: var(--nav-width);
+        }
+
+        &__icon{
+            font-size: 1.3rem;
+        }
+
+        &__title{
+            margin-top: .8rem;
+        }
+
+        &__name, &__logo-name, &__subtitle{
+            opacity: 0;
+            transition: .4s;
+        }
+
+        &:hover &__name,&:hover &__logo-name,&:hover &__subtitle{
+            opacity: 1;
+        }
+
+    }
+}

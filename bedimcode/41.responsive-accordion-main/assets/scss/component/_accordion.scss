@@ -1,0 +1,106 @@
+.accordion{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    &__container{
+        background-color: var(--container-color);
+        display: grid;
+        row-gap: .75rem;
+        border-radius: .5rem;
+        box-shadow: 0 12px 32px  rgba(51,51,51,.1);
+        padding : 2rem 1rem;
+    }
+
+    &__item{
+        border-radius: .25rem;
+        box-shadow: 0 2px 6px rgba(38,38,38,0.1);
+        position: relative;
+        transition: all .25s ease;
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 5px;
+            border-radius: .25rem 0 0 .25rem;
+        }
+
+        &:first-child{
+
+            background-color: #fff7f0;
+
+            &::after{
+                background-color: #ffc08a;
+            }
+        }
+
+        &:nth-child(2){
+            background-color: #f0f0ff;
+
+            &::after{
+                background-color: #8a8aff;
+            }
+        }
+
+        &:nth-child(3){
+            background-color: #fff0f3;
+
+            &::after{
+                background-color: #ff8aa1;
+            }
+        }
+
+        &:last-child{
+
+            background-color: #f0faff;
+
+            &::after{
+                background-color: #8ad8ff;
+            }
+        }
+    }
+
+    &__header{
+        display: flex;
+        padding: 1.25rem 1.25rem 1.25rem 1rem;
+        column-gap: .5rem;
+        cursor: pointer;
+    }
+
+    &__icon{
+        font-size: 1.5rem;
+        font-weight: 400;
+        height: max-content;
+        transition: .3s;
+
+        .accordion-open &{
+            transform: rotate(45deg);
+        }
+    }
+
+    &__title{
+        font-size: var(--small-font-size);
+        font-weight: 400;
+        margin-top: .15rem;
+        transition: .2s;
+        color: var(--title-color);
+        
+        .accordion-open &{
+            font-weight: 600;
+        }
+    }
+
+    &__content{
+        overflow: hidden;
+        height: 0;
+        transition: all .25s ease;
+    }
+
+    &__description{
+        padding: 0 1.25rem 1.25rem 3rem;
+        font-size: var(--smaller-font-size);
+    }
+}

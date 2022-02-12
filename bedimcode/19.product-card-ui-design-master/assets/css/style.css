@@ -1,0 +1,152 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+:root {
+  /*===== Colores =====*/
+  --first-color: #F2A20C;
+  --white-color: #E9EAEC;
+  --dark-color: #272D40;
+  --dark-color-lighten: #F2F5FF;
+  /*===== Fuente y tipografia =====*/
+  --body-font: 'Poppins', sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .875rem;
+}
+
+*, ::after, ::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: 1rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background-color: var(--dark-color-lighten);
+}
+
+.card {
+  width: 320px;
+  height: 400px;
+  background-color: var(--dark-color);
+  border-radius: 1rem;
+  padding: 4rem 2rem 0;
+  position: relative;
+}
+
+.card__img {
+  position: absolute;
+  width: 260px;
+  -webkit-filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+          filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+}
+
+.card:hover .card__img {
+  -webkit-transform: translate(-1.5rem, -9.5rem) rotate(-20deg);
+          transform: translate(-1.5rem, -9.5rem) rotate(-20deg);
+}
+
+.card__data {
+  -webkit-transform: translateY(13.2rem);
+          transform: translateY(13.2rem);
+  text-align: center;
+}
+
+.card:hover .card__data {
+  -webkit-transform: translateY(4.8rem);
+          transform: translateY(4.8rem);
+}
+
+.card__title {
+  font-size: var(--h1-font-size);
+  color: var(--first-color);
+  margin-bottom: .5rem;
+}
+
+.card:hover .card__title {
+  -webkit-transform: translateX(-2.3rem);
+          transform: translateX(-2.3rem);
+  margin-bottom: 0;
+}
+
+.card__money {
+  display: inline-block;
+  color: var(--white-color);
+  margin-bottom: 1.25rem;
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+}
+
+.card:hover .card__money {
+  -webkit-transform: translateX(-6.8rem);
+          transform: translateX(-6.8rem);
+}
+
+.card__text {
+  font-size: var(--small-font-size);
+  color: var(--white-color);
+  margin-bottom: 1.25rem;
+  text-align: initial;
+  opacity: 0;
+}
+
+.card:hover .card__text {
+  opacity: 1;
+}
+
+.card__button {
+  color: var(--white-color);
+  background-color: var(--first-color);
+  padding: 1.125rem 2rem;
+  border-radius: .5rem;
+  font-weight: 600;
+  -webkit-transition: .2s;
+  transition: .2s;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card__button:hover {
+  -webkit-box-shadow: 0 18px 40px -12px rgba(242, 162, 12, 0.35);
+          box-shadow: 0 18px 40px -12px rgba(242, 162, 12, 0.35);
+}
+
+.card:hover .card__button {
+  opacity: 1;
+}
+
+.card__img, .card__data, .card__title, .card__money, .card__text {
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.card:hover .card__text,
+.card:hover .card__button {
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+/*# sourceMappingURL=style.css.map */

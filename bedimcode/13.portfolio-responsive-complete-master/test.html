@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                startTime = new Date().getTime();               
+                for (i = 0; i < 10000; i++)
+                {
+                    s = $(".someclass");
+                }           
+                $("#withoutcontext").html(elapsedMilliseconds(startTime));
+
+
+                startTime = new Date().getTime();
+                for (i = 0; i < 10000; i++)
+                {
+                    s = $("#somecontainer");
+                }           
+                $("#withcontext").html(elapsedMilliseconds(startTime));
+
+            });
+
+            function elapsedMilliseconds(startTime)
+            {
+                var n = new Date();
+                var s = n.getTime();
+                var diff = s - startTime;
+                return diff;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>jQuery Selector Performance: Context vs No Context</h1>
+
+        <h2>$(".someclass")</h2>
+        <span id="withoutcontext">---</span> ms<br /><br />
+
+        <h2>$(".someclass", "#somecontainer")</h2>
+        <span id="withcontext">---</span> ms<br /><br />
+
+        <hr />
+        <p class="someclass">someclass</p>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+        <div id="somecontainer">
+            <p class="a">a</p>
+            <p class="b">b</p>
+            <p class="c">c</p>
+            
+        </div>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+    </body>
+</html>

@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+.main {
+    width: 1200px;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: #333;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 48px;
+}
+
+/* Article */
+h1 {
+    line-height: 2rem;
+}
+
+article {
+    padding: 0 16px;
+    line-height: 1.6rem;
+}
+
+article img {
+    width: 640px;
+    max-width: 100%;
+    display: block;
+    margin: 32px auto;
+}
+
+.nav__bar-btn{
+    width:28px;
+    height:28px;
+    color:#fff;
+    display: none;
+}
+
+.nav__overlay{
+    display: none;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity linear 0.2s;
+}
+
+.nav__mobile{
+    display:block;
+    top:0;
+    bottom: 0;
+    right:0;
+    width: 320px;
+    background-color:#fff;
+    z-index:200;
+    position:fixed;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s;
+}
+
+.nav__mobile-list{
+    margin-top:24px;
+    list-style-type: none;  
+}
+
+.nav__mobile-link{
+    text-decoration: none;
+    color:#333;
+    display:block !important;
+    padding: 8px 0;
+    font-size: 1.4 rem;
+    
+
+}
+
+.nav__mobile-close{
+    color: #666;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 300;
+    display:block;
+    width: 20px;
+    height: 20px;
+}
+
+#nav-mobile-input{
+    display:none;
+}
+
+#nav-mobile-input:checked ~ .nav__overlay{
+    display: block;
+    opacity: 1;
+}
+
+#nav-mobile-input:checked ~ .nav__mobile{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+@media (max-width:1023px){
+    .nav__bar-btn{
+        display: block !important;
+        position: absolute;
+        top:0;
+        right:0;
+        margin: 8px;
+    }
+
+    .nav__pc{
+        display: none;
+    }
+}

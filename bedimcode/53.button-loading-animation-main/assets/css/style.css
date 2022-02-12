@@ -1,0 +1,83 @@
+/*=============== LOADING BUTTON ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root {
+  /*========== Colors ==========*/
+  --first-color: hsl(231, 44%, 56%);
+  --first-color-alt: hsl(231, 44%, 51%);
+  --text-color: hsl(231, 12%, 98%);
+  --body-color: hsl(231, 100%, 94%);
+}
+
+*, ::after, ::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  background-color: var(--body-color);
+}
+
+body,
+button {
+  font-family: 'Poppins', sans-serif;
+}
+
+.button__loader {
+  border: none;
+  outline: none;
+  position: relative;
+  background-color: var(--first-color);
+  color: var(--text-color);
+  padding: 1.25rem 2.5rem;
+  font-size: 1rem;
+  border-radius: .5rem;
+  -webkit-box-shadow: 0 18px 40px rgba(80, 99, 206, 0.3);
+          box-shadow: 0 18px 40px rgba(80, 99, 206, 0.3);
+  overflow: hidden;
+  cursor: wait;
+}
+
+.button__loader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background: repeating-linear-gradient(60deg, transparent, transparent 0.75rem, var(--first-color-alt) 0.75rem, var(--first-color-alt) 1.5rem);
+  -webkit-animation: load 1s infinite linear;
+          animation: load 1s infinite linear;
+}
+
+.button__text {
+  position: relative;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-1.75rem);
+            transform: translateX(-1.75rem);
+  }
+}
+
+@keyframes load {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-1.75rem);
+            transform: translateX(-1.75rem);
+  }
+}
+/*# sourceMappingURL=style.css.map */

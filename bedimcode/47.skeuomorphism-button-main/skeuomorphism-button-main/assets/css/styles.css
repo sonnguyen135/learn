@@ -1,0 +1,70 @@
+/*=============== SKEUOMORPHISM BUTTON ===============*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: #26272C;
+}
+
+.skeuo__switch {
+  display: none;
+}
+
+.skeuo__button {
+  width: 6rem;
+  background: -webkit-gradient(linear, left top, right top, from(#444650), to(#101113));
+  background: linear-gradient(90deg, #444650 0%, #101113 100%);
+  padding: .75rem 1.25rem .75rem 1rem;
+  border-radius: 3rem;
+  -webkit-box-shadow: inset -2px 0 18px #212227, inset -14px 0 6px #43454F, inset 4px 0 6px #151619;
+          box-shadow: inset -2px 0 18px #212227, inset -14px 0 6px #43454F, inset 4px 0 6px #151619;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.skeuo__circle {
+  font-size: 18px;
+  color: #5CCC9D;
+}
+
+.skeuo__line {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  font-size: 22px;
+  color: #9699A6;
+}
+
+/* Button animation effects */
+.skeuo__switch:checked ~ .skeuo__button {
+  background: -webkit-gradient(linear, left top, right top, from(#101113), to(#444650));
+  background: linear-gradient(90deg, #101113 0%, #444650 100%);
+  -webkit-box-shadow: inset -2px 0 18px #212227, inset -4px 0 6px #151619, inset 14px 0 6px #43454F;
+          box-shadow: inset -2px 0 18px #212227, inset -4px 0 6px #151619, inset 14px 0 6px #43454F;
+  padding: .75rem 1rem .75rem 1.25rem;
+}
+
+.skeuo__switch:checked ~ .skeuo__button .skeuo__circle {
+  font-size: 20px;
+}
+
+.skeuo__switch:checked ~ .skeuo__button .skeuo__line {
+  font-size: 18px;
+}
+/*# sourceMappingURL=styles.css.map */

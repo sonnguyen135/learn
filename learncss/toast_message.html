@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/toast_message.css"/>
+    <link rel="stylesheet" href="css/button_bem.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/brands.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/solid.css"/>
+</head>
+<body>
+    <div>
+        <button onclick="showToastSuccess()" class="btn btn--success">
+            Show Success Toast
+        </button>
+        <button onclick="showToastInfo()" class="btn btn--info">
+            Show Warn Toast
+        </button>
+        <button onclick="showToastWarn()" class="btn btn--warn">
+            Show Warn Toast
+        </button>
+        <button onclick="showToastError()" class="btn btn--danger">
+            Show Error Toast
+        </button>
+    </div>
+    <script src="js/toast.js"></script>
+    <script language="javascript">
+        function showToastSuccess(){
+            toast({
+                title : 'Success',
+                message : 'Thành công rồi baby nhé. Đây là Success Message',
+                type : 'success',
+                duration : 1000
+            });
+        };
+
+        function showToastInfo(){
+            toast({
+                title : 'Info',
+                message : 'Thành công rồi baby nhé. Đây là Info Message',
+                type : 'info',
+                duration : 2000
+            });
+        };
+
+        function showToastWarn(){
+            toast({
+                title : 'Warning',
+                message : 'Thành công rồi baby nhé. Đây là Warning Message',
+                type : 'warning',
+                duration : 3000
+            });
+        };
+
+        function showToastError(){
+            toast({
+                title : 'Error',
+                message : 'Thành công rồi baby nhé. Đây là Error Message',
+                type : 'error',
+                duration : 8000
+            });
+        };
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+.btn{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 2px 2px 2px #000;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn--aimation-round-plus::before{
+    display: inline-block;
+    content: "";
+    position :absolute;
+    background-color:transparent;
+    opacity: 0;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    width : 100%;
+    height: 100%;
+    z-index: 10;
+    transition: all 0.5s;
+}
+
+.btn--animation-slide::before{
+    display: inline-block;
+    content: "";
+    position :absolute;
+    background-color: #fff;
+    opacity: 0.3;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    width : 0%;
+    height: 100%;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.btn--animation-slide:active::before{
+    width:100%;
+}
+
+.btn--animation-outline{
+    overflow: visible !important;
+}
+
+.btn--animation-outline::before{
+    display: inline-block;
+    content: "";
+    position :absolute;
+    background-color:transparent;
+    opacity: 0.8;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    width : 100%;
+    height: 100%;
+    z-index: -100;
+    transition: all 0.3s;
+    /* transform: scale(0); */
+}
+
+.btn--animation-outline:active::before{
+    background-color: #fff;
+    transform: scaleX(1.6) scaleY(1.4) ;
+    opacity: 0;
+}
+
+
+.btn:active{
+    box-shadow: 1px 0px 2px #000;
+    transform: translateY(2px) translateX(2px);
+}
+
+.btn--aimation-round-plus:active::before{
+    background-color:#fff;
+    opacity: 0.5;
+    transform: scaleX(0) scaleY(0);
+}
+
+.btn:disabled{
+    background-color: gray;
+}
+
+.btn + .btn{
+    margin-left: 16px;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+.btn--success{
+    background-color: #71be34;
+}
+
+.btn--warn{
+    background-color: #ffb702;
+}
+
+.btn--danger{
+    background-color: #ff5837;
+}
+
+.btn--info{
+    background-color: rgb(17, 185, 236);
+}
+
+.btn--disabled{
+    cursor: default;
+    opacity: 0.5 !important; 
+}
+
+.btn--size-s{
+    padding: 8px 32px;
+}
+
+.btn--size-l{
+    padding: 16px 58px;
+}
+
+
+

@@ -1,0 +1,35 @@
+/*============ LAYOUTS ==========*/
+
+.section{
+    padding: 4rem 0 2rem;
+
+    &__title{
+        text-align: center;
+        font-size: var(--bigger-font-size);
+        margin-bottom: var(--mb-2-5);
+
+        &-gradient{
+            color: transparent;
+            background: var(--text-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+    }
+
+
+}
+
+.container{
+    max-width: 968px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid{
+    display: grid;
+}
+
+
+
+
+

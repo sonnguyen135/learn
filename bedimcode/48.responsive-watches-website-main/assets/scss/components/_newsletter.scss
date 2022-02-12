@@ -1,0 +1,32 @@
+.newsletter{
+    &__bg{
+        background-color: var(--first-color);
+        padding : 3rem 1.5rem;
+        text-align: center;
+        row-gap: 2.5rem;
+    }
+
+    &__title{
+        font-size: var(--h1-font-size);
+        color: #262626;
+        margin-bottom: var(--mb-1-5);
+    }
+
+    &__description{
+        color: #595959;
+    }
+
+    &__subscribe{
+        display: flex;
+        flex-direction: column;
+        row-gap: .75rem;
+    }
+
+    &__input{
+        background-color: #f0f0f0;
+        border: 0;
+        outline: 0;
+        padding: 1.25rem 1rem;
+        color: #262626;
+    }
+}

@@ -1,0 +1,25 @@
+/*============= DISCOUNT ===============*/
+.discount{
+    &__container{
+        background-color: var(--container-color);
+        padding: 2rem 1.5rem;
+        position: relative;
+        border-radius: .75rem;
+    }
+
+    &__title{
+        font-size: var(--h3-font-size);
+        margin-bottom: var(--mb-0-75);
+    }
+
+    &__description{
+        margin-bottom: var(--mb-1);
+    }
+
+    &__img{
+        position: absolute;
+        width: 300px;
+        top: 4rem;
+        right: -11rem;
+    }
+}

@@ -1,0 +1,59 @@
+.trick{
+    &__container{
+        grid-template-columns: repeat(2,1fr);
+        gap: 1.5rem;
+        padding-top: 1rem;
+    }
+
+    &__content{
+        position: relative;
+        background: var(--container-color);
+        padding: 1.5rem 0 1rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    &__content:hover &__img{
+        transform: translateY(-.5rem);
+    }
+
+    &__content:hover &__button{
+        right: 0;
+    }
+
+    &__img{
+        width: 90px;
+        transition: .3s;
+    }
+
+    &__title,&__price{
+        font-size: var(--normal-font-size);
+        font-weight: var(--font-medium);
+        color: var(--title-color);
+    }
+
+    &__subtitle,&__price{
+        display: block;
+    }
+
+    &__subtitle{
+        font-size: var(--smaller-font-size);
+        margin-bottom: var(--mb-0-5);
+    }
+
+    &__button{
+        position: absolute;
+        display: flex;
+        padding: .5rem;
+        border-radius: .25rem .25rem .75rem .25rem;
+        bottom: 0;
+        right: -3rem;   
+        transition: .4s;
+    }
+
+    &__icon{
+        font-size: 1.25rem;
+        color: var(--title-color);
+    }
+}

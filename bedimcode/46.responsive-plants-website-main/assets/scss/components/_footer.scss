@@ -1,0 +1,76 @@
+.footer{
+    &__container{
+        row-gap: 3rem;
+    }
+
+    &__logo{
+        color: var(--title-color);
+        margin-bottom: var(--mb-2-5);
+        @include logo;
+    }
+
+    &__title{
+        font-size: var(--h3-font-size);
+        margin-bottom: var(--mb-1-5);
+    }
+
+    &__subscribe{
+        display: flex;
+        background-color: var(--first-color-lighten);
+        padding: .75rem;
+        justify-content: space-between;
+        border-radius: .5rem;
+    }
+
+    &__input{
+        width: 70%;
+        background: none;
+        color: var(--text-color);
+        padding: 0 .5rem;
+    }
+
+    &__button{
+        padding: 1rem;
+    }
+
+    &__data{
+        display: grid;
+        row-gap: .75rem;
+    }
+
+    &__info{
+        font-size: var(--small-font-size);
+    }
+
+    &__social{
+        display: flex;
+        column-gap: .75rem;
+
+        &-link{
+            font-size: 1rem;
+            color: var(--text-color);
+            transition: .3s;
+        }
+
+        &-link:hover{
+            transform: translateY(-.25rem);
+        }
+    }
+
+    &__cards{
+        display: inline-flex;
+        column-gap: .5rem;
+        align-items: center;
+    }
+
+    &__card{
+        width: 35px;
+    }
+
+    &__copy{
+        text-align: center;
+        font-size: var(--smaller-font-size);
+        color: var(--text-color-light);
+        margin: 5rem 0 1rem;
+    }
+}

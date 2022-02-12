@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/toast_message.css">
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/brands.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/solid.css"/>
+</head>
+<body>
+    <div class="app">
+        <div class="shape1"></div>
+        <div class="shape2"></div>
+        <img src="assets/img/authentication.svg" alt="" class="form__img">
+        <div class="form">
+            <form action="" id="form" class="form__content">
+                <h1 class="form__title">Welcome</h1>
+
+                <div class="form__div">
+                    <div class="form__div-icon">
+                        <i class='bx bx-user-circle'></i>
+                    </div>
+
+                    <div class="form__div-input">
+                        <label for="" class="form__label">Username</label>
+                        <input type="text" name="username" id="" class="form__input">
+                    </div>
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__div">
+                    <div class="form__div-icon">
+                        <i class='bx bx-lock'></i>
+                    </div>
+
+                    <div class="form__div-input">
+                        <label for="" class="form__label">Password</label>
+                        <input type="text" name="password" id="" class="form__input">
+                    </div>
+                    <span class="form__message"></span>
+                </div>
+                <a href="" class="form__forgot">Forgot Password?</a>
+                <button type="submit" class="form__button">Login</button>
+
+                <div class="form__social">
+                    <span class="form__social-text">Our login with</span>
+                    <a href="" class="form__social-icon"><i class='bx bxl-facebook' ></i></a>
+                    <a href="" class="form__social-icon"><i class='bx bxl-google' ></i></a>
+                    <a href="" class="form__social-icon"><i class='bx bxl-instagram' ></i></a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- ===== MAIN JS ===== -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/validator.js"></script>
+    <script src="assets/js/toast.js"></script>
+    <script>
+        sValidation('#form',{
+            rules: {
+                'username' : ['required','minLength:10'],
+                'password' : ['required','minLength: 10'],
+            },
+            messages: {
+                'username.required' : 'Vui nhập nhập họ tên đầy đủ',
+                'username.minLength' : 'Họ tên phải có ít nhất 10 kí tự',
+                'password.required' : 'Bạn chưa nhập mật khẩu',
+                'password.minLength' : 'Mật khẩu phải có ít nhất 10 kí tự',
+            },
+            displayError: displayToast,
+            submitFunc(){
+              alert('Bùm')
+            }
+        });
+        function displayErrorCustom(error,isSubmit = false){
+            function displayError(element,err){
+                let errElement = element.parentElement.parentElement.querySelector('.form__message');
+                let er = err[0];
+                errElement.innerText = er.mess;
+            
+                element.parentElement.parentElement.classList.add('invalid');
+            
+                let eventRemoveInvalid = typeInput(element.type,'click','change','input');
+                        
+                element.addEventListener(eventRemoveInvalid,
+                    function(){
+                        element.parentElement.parentElement.classList.remove('invalid');
+                        errElement.innerText = '';
+                    });
+            }
+
+            if (isSubmit){
+                error.forEach((e)=>{
+                    let element,err;
+                    [,element,err] = e;
+                    displayError(element,err);
+                })
+            }
+            else{
+                let element,err;
+                [,element,err] = error;
+                displayError(element,err);
+            }
+        }
+    </script>
+</body>
+</html>

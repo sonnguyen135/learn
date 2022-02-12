@@ -1,0 +1,29 @@
+.button{
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 1rem 1.75rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+    transition: .3s;
+
+    &--flex{
+        display: inline-flex;
+        align-items: center;
+        column-gap: .5rem;
+    }
+
+    &__icon{
+        transition: .3s;
+
+    }
+
+    &--link{
+        font-weight: var(--font-medium);
+        color: var(--first-color);
+    }
+
+    &:hover &__icon,&--link:hover &__icon{
+        transform: translateX(.25rem);
+    }
+}

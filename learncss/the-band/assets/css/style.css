@@ -1,0 +1,401 @@
+/* Reset Css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html{
+    font-family: "Lato", sans-serif;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+ul,li{
+    list-style-type: none;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.text-white{
+    color: #fff !important;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.row{
+    display:block;
+}
+
+.row::after,.row::before
+{
+    clear: both;
+    content: "";
+    display: table;
+    margin-bottom: -1px;
+    height: 0;
+} 
+
+.row [class^="col-"]{
+    float: left;
+}
+
+.row .col-full{
+    width:100%;
+}
+
+.row .col-half{
+    width: 50%;
+}
+
+.row .col-third{
+    width: calc(100%/3);
+}
+
+.pull-right{
+    float: right;
+}
+
+#header{
+    display: block;
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    z-index: 100;
+    transition: all 0.5s ease;
+}
+
+#nav{
+    display: inline-block;
+}
+
+#nav li{
+    display: inline-block;
+    position: relative;
+}
+
+#nav > li > a{
+    color:#fff;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: inline-block;
+}
+
+#nav li i{
+    font-size: 11px;
+}
+
+#nav li a:hover{
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav li:hover .subnav{
+    display: block !important;
+}
+
+#nav .subnav{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.5);
+    top: 100%;
+    left:0;
+}
+
+.subnav li a,.subnav li {
+    color:#000;
+    display : block !important;
+    width: 100%;
+    line-height: 38px !important;
+    min-width: 160px;
+}
+
+.subnav li a{
+    padding-left: 16px !important;
+}
+
+
+.search-btn i,.menu-responsive i {
+    font-size:20px;
+    line-height:46px;
+    color: #fff;
+    padding: 0 24px;
+    cursor: pointer;
+}
+
+.menu-responsive{
+    display:none;
+}
+
+
+.search-btn:hover{
+    background-color: red;
+}
+
+#slider{
+    margin-top:46px;
+    padding-top: 50%;
+    background: url('../img/sliders/slider1.jpg') top center / cover no-repeat;
+    position: relative;
+}
+
+#slider .text-content{
+    display: block;
+    position: absolute;
+    bottom: 47px;
+    color: #fff;
+    width :100%;
+    text-align:center;
+}
+
+#slider .text-heading{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#slider .text-description{
+    margin-top: 25px;
+    font-size: 15px;
+    text-shadow: 0 0 1px #000;
+}
+
+
+#content .content-section{
+    width: 800px;
+    margin: 0 auto;
+    padding: 64px 16px;
+    text-align: center;
+    max-width:100%;
+}
+
+#content .section-heading{
+    font-size: 30px;
+    font-weight:400;
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading{
+    margin: 15px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+#content .about-text{
+    margin: 15px 0;
+    text-align: justify;
+    font-size: 15px;
+}
+
+#content .member-list{
+    padding: 32px 0;
+}
+
+#content .member-name{
+    margin:15px;
+}
+
+#content .member-img{
+    width: 60%;
+    border-radius: 5px;
+}
+
+#content .tour-section{
+    background-color: #000;
+}
+
+#content .tickets-list{
+    text-align: left;
+    margin-top: 39px;
+    background-color: #fff;
+}
+
+.tickets-list li{
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    padding: 8px 16px;
+    color: #757575;
+}
+
+.tickets-list .sold-out{
+    background-color: red;
+    padding : 2px 5px;
+    color: #fff;
+    margin-left:16px;
+}
+
+.tickets-list .quantity{
+    float:right;
+    width: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+}
+
+.place-list{
+    padding : 32px 8px;
+    margin: 0 -16px;
+}
+
+.place-body::before {
+    clear: both;
+    content: "";
+    display: table;
+    margin-top: -1px;
+    height: 0;
+}
+
+.place-list .place-item{
+    padding: 0 8px;
+}
+
+.place-item img{
+    width:100%;
+    vertical-align: top;
+}
+
+.place-list .place-time,
+.place-item img:hover{
+    opacity: 0.6;
+}
+
+.place-list .place-body{
+    background-color: #fff;
+    text-align: left;
+    padding: 0 16px;
+    display: block;
+    /* overflow: hidden; */
+}
+
+.place-list .place-heading{
+    font-weight: bold;
+    margin: 15px 0 !important;
+    /* margin: 0; */
+    display: block;
+}
+.place-list .place-desc,
+.place-list .place-time{
+    margin: 15px 0;
+}
+
+.place-item{
+    margin-bottom: 16px;
+}
+
+.btn{
+    padding: 8px 16px;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    margin-bottom: 16px;
+    border:none;
+    cursor: pointer;
+    font: inherit;
+    text-align: center;
+    appearance:auto;
+}
+
+.btn:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+.contact{
+    text-align: left;
+    padding: 32px 8px;
+    margin: 0 -8px;
+}
+
+.contact-form .row:first-child{
+    margin: 0 -8px 8px -8px;
+}
+
+.contact-form .col-half {
+    padding : 0 8px;
+}
+
+.contact-form-input{
+    border: 1px solid #ccc!important;
+    padding: 8px;
+    display: block;
+    width: 100%;
+    font: inherit;
+}
+
+.contact-form-submit{
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+    float: right;
+    white-space: nowrap;
+
+}
+
+.contact-form-submit:hover{
+    color:#000;
+    background-color: #ccc;
+}
+
+.contact-info p{
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.contact-info [class^='ti-']{
+    width: 30px;
+    display: inline-block;
+}
+
+
+.map-img{
+    max-width: 100%;    
+    filter: grayscale(50%);
+    height: auto;
+    vertical-align: middle;
+}
+
+footer{
+    padding : 64px 16px;
+    background-color: #f1f1f1!important;
+}
+
+.social-list a{
+    text-decoration: none;
+    font-size: 24px;
+    color: rgba(0,0,0,0.6);
+}
+
+.social-list a:hover{
+    opacity: 0.6;
+}
+
+.copyright{
+    font-size: 15px;
+    margin: 15px 0;
+    color: rgba(0,0,0,0.6);
+    
+}
+
+.copyright a{
+    color:rgba(0,0,0,0.6);
+    /* text-decoration: none; */
+
+}

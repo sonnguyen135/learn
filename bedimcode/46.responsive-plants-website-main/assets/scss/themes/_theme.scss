@@ -1,0 +1,24 @@
+/*================= DARK THEME =================*/
+body.dark-theme{
+    --first-color-dark: hsl(var(--hue), 8%, 20%);
+    --title-color: hsl(var(--hue), 4%, 95%);
+    --text-color: hsl(var(--hue), 4%, 75%);
+    --body-color: hsl(var(--hue), 8%, 12%);
+    --container-color: hsl(var(--hue), 8%, 16%);
+}
+
+
+.change-theme{
+    font-size: 1.15rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+
+.dark-theme .steps__bg, .dark-theme .questions {
+    background-color: var(--first-color-dark);
+}
+
+.dark-theme .product__circle, .dark-theme .footer__subscribe {
+    background-color: var(--container-color);
+}

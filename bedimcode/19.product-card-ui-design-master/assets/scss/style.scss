@@ -1,0 +1,140 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+    /*===== Colores =====*/
+    --first-color: #F2A20C;
+    --white-color: #E9EAEC;
+    --dark-color: #272D40;
+    --dark-color-lighten: #F2F5FF;
+
+    /*===== Fuente y tipografia =====*/
+    --body-font: 'Poppins', sans-serif;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+
+}
+
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--dark-color-lighten);
+}
+
+.card{
+    width: 320px;
+    height: 400px;
+    background-color: var(--dark-color);
+    border-radius: 1rem;
+    padding: 4rem 2rem 0;
+    position: relative;
+
+
+    &__img{
+        position: absolute;
+        width: 260px;
+        filter: drop-shadow(5px 10px 15px rgba(8,9,13,.4));
+
+        .card:hover &{
+            transform: translate(-1.5rem, -9.5rem) rotate(-20deg);
+        }
+    }
+
+    &__data{
+        transform: translateY(13.2rem);
+        text-align: center;
+        .card:hover &{
+            transform: translateY(4.8rem);
+        }
+    }
+
+    &__title{
+        font-size: var(--h1-font-size);
+        color: var(--first-color);
+        margin-bottom: .5rem;
+
+        .card:hover &{
+            transform: translateX(-2.3rem);
+            margin-bottom: 0;
+        }
+    }
+
+    &__money{
+        display: inline-block;
+        color: var(--white-color);
+        margin-bottom: 1.25rem;
+        font-size: var(--h2-font-size);
+        font-weight: 500;
+
+        .card:hover &{
+            transform: translateX(-6.8rem);
+        }
+    }
+
+    &__text{
+        font-size: var(--small-font-size);
+        color: var(--white-color);
+        margin-bottom: 1.25rem;
+        text-align: initial;
+        opacity: 0;
+        
+        .card:hover &{
+            opacity: 1;
+        }
+    }
+
+    &__button{
+        color: var(--white-color);
+        background-color: var(--first-color);
+        padding: 1.125rem 2rem;
+        border-radius: .5rem;
+        font-weight: 600;
+        transition: .2s;
+        width: max-content;
+        display: block;
+        opacity: 0;
+        cursor: pointer;
+
+        &:hover{
+            box-shadow: 0 18px 40px -12px rgba(242,162,12,.35);
+        }
+
+        .card:hover &{
+            opacity: 1;
+        }
+    }
+
+    &__img, 
+    &__data, 
+    &__title, 
+    &__money, 
+    &__text {
+        transition: .5s;
+    }
+
+    &:hover &__text,
+    &:hover &__button{
+        transition-delay: .2s;
+    }
+
+}

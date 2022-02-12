@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:700,900&display=swap');
+
+
+/* Header Height */
+$header-height: 3rem;
+$font-bold: 700;
+$font-black: 900;
+
+/* Color Variables */
+:root{
+    --text-color: #000;
+    --first-color: #D8D8E2;
+}
+
+/* Font */
+:root{
+    --body-font: 'Raleway', sans-serif;
+    --big-font-size: 3rem;
+    --h2-font-size: 1.25rem;
+    --smaller-font-size: 0.75rem;
+    --normal-font-size: 0.93rem;
+
+    @media screen and (min-width: 768px) {
+        --h2-font-size: 2rem;
+        --big-font-size: 6rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: 0.813rem;
+    }
+}
+
+
+/* BASE */
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--body-font);
+    background-color: var(--first-color);
+    color: var(--text-color);
+    margin-top: $header-height;
+    font-weight: $font-bold;
+    overflow: hidden;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* LAYOUTS */
+.bd-grid{
+    max-width: 1200px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.l-header{
+    position: fixed;
+    height: $header-height;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav{
+    display: flex;
+    height: $header-height;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo{
+        font-size: var(--normal-font-size);
+        font-weight: 900;
+    }
+
+    &__toggle{
+        font-size: 1.5rem ;
+        cursor: pointer;
+    }
+
+    &__menu{
+        @media screen and (max-width: 768px) {
+            position: fixed;
+            width: 85%;
+            top: 0 ;
+            right: -100%;
+            bottom: 0;
+            height: 100vh;
+            background-color: #fff;
+            padding: .75rem;
+            transition: all .5s;
+            z-index: 101;
+            text-transform: uppercase;
+        }
+    }
+
+    &__list{
+        padding-top: 2.5rem;
+        text-align: center;
+    }
+
+    &__close{
+        height: 28px;
+        text-align: right;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    &__item{
+        margin-bottom: 2.5rem;
+    }
+
+    &__link{
+        color: var(--text-color);
+        font-weight: 900;
+        padding: 8px;
+
+        &:hover{
+            color: #575757;
+        }
+    }
+}
+
+.show{
+    right: -1rem;
+}
+
+.home{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-content: flex-end;
+    height: calc(100vh - #{$header-height});
+    position: relative;
+
+    &__title{
+        position: absolute;
+        font-size: var(--big-font-size);
+        font-weight: 900;
+        top: 4%;
+        left: 5%;
+        z-index: 10;
+    }
+
+    &__img{
+        position: absolute;
+        top: 10%;
+        left: 22%;
+        width: 235px;
+        height: 353px;
+        z-index: 9;
+    }
+
+    &__socials{
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding-top: 2rem;
+    }
+    &__social-link{
+        color: var(--text-color);
+        font-size: var(--smaller-font-size);
+        padding-bottom: 2rem;
+    }
+
+
+    &__subtitle{
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding-top: 2rem;
+        font-size: var(--h2-font-size);
+        font-weight: 900;
+        padding-right: 8px;
+    }
+
+    &__button{
+        position: absolute;
+        bottom: 0;
+        right: -1rem;
+        background-color: #000;
+        color: #fff;
+        padding: 1rem;
+        
+            &-icon {
+                padding-left: 4.25rem;
+            }
+    }
+
+}
+
+@media screen and (min-width: 768px){
+    body{
+        margin-top:0;
+    }
+    .nav{
+        &__list{
+            display: flex;
+            padding: 0;
+        }
+
+        &__toggle{
+            display: none;
+        }
+
+        &__item{
+            margin-left: 3rem;
+            margin-bottom: 0;
+        }
+
+        &__link{
+            font-weight: $font-bold;
+        }
+
+        &__close{
+            display: none;
+        }
+    }
+
+    .home{
+        height: 100vh;
+        grid-template-columns: 4fr 1fr;
+
+        &__title{
+            top: 16%; 
+            left: 23%;
+        }
+
+        &__socials {
+            padding-top: 5rem;
+        }
+        
+        &__social-link{
+            padding-bottom: 3rem;
+        }
+
+        &__subtitle{
+            padding-top: 288px;
+            padding-right: 128px;
+            width: 100%;
+        }
+        
+        &__img {
+            width: 359px;
+            height: 539px;
+            top: 18%;
+            left: 43%;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

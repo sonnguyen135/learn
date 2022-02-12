@@ -1,0 +1,236 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+/* Color Variable */
+:root{
+    --first-color: #12192C;
+    --text-color: #8590AD;
+}
+
+/* Font */
+:root{
+    --body-font: 'Roboto', sans-serif;
+    --big-font-size: 2rem;
+    --normal-font-size: 0.938rem;
+    --smaller-font-size: 0.875rem;
+
+    @media screen and (min-width: 768px){
+            --big-font-size: 2.5rem;
+            --normal-font-size: 1rem;
+    }
+    
+}
+
+
+/* BASE */
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: var(--body-font);
+    color: var(--first-color);
+    background-color: #fff;
+    overflow: hidden;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* LAYOUTs */
+.shape1,.shape2{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(var(--first-color), rgba(196,196,196,0));
+}
+
+.shape1{
+    top: -7rem;
+    left: -3.5rem;
+}
+
+.shape2{
+    bottom: -6rem;
+    right: -5.5rem;
+    transform: rotate(180deg);
+}
+
+.app{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__img{
+    display: none;
+}
+
+.form{
+   &__title{
+       font-size: var(--big-font-size);
+       font-weight: 500;
+       margin-bottom: 2rem;
+   }
+
+   &__content{
+       width: 290px;
+   }
+
+   &__div{
+       display: grid;
+       grid-template-columns: 10% 90%;
+       padding: .25rem 0;
+       border-bottom: 1px solid var(--text-color);
+       margin-bottom: 1rem;
+       color: var(--text-color);
+
+        &:nth-of-type(1){
+            margin-bottom: 3rem;
+        }
+
+        &-icon{
+            font-size: 1.5rem;
+            transition: .3s;
+        }
+
+        &-input{
+            position: relative;
+        }
+    }
+
+    .focus{
+        color: var(--first-color);
+    }
+
+    .focus &__label{
+        top: -1.5rem;
+        font-size: .875rem;
+        color: var(--first-color);
+    }
+
+    &__label{
+        position: absolute;
+        display: block ;
+        left: .75rem;
+        top: .25rem;
+        font-size: var(--normal-font-size);
+        transition: all .5s;
+    }
+
+
+    &__input{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        padding: .5rem;
+        font-size: 1.2rem;
+    }
+
+    &__message{
+        grid-column: span 2;
+    }
+
+    .invalid{
+        color: red;
+    }
+
+    &__forgot{
+        text-align: right;
+        display: block;
+        margin-bottom: 2rem;
+        font-size: var(--normal-font-size);
+        color: var(--text-color);
+        font-weight: 500;
+        transition: all .5s;
+        &:hover{ 
+            color: var(--first-color);
+        }
+    }
+
+    &__button{
+        display: block;
+        background-color: var(--first-color);
+        padding: 1rem;
+        border: none;
+        width: 100%;
+        border-radius: .5rem;
+        color: #fff;
+        cursor: pointer;
+        margin-bottom: 3rem;
+        outline: none;
+        font-size: var(--normal-font-size);
+    }
+
+    &__social{
+        text-align: center;
+        &-text{
+            display: block;
+            font-size: var(--normal-font-size);
+            margin-bottom: 1rem;
+        }
+
+        &-icon{
+            display: inline-flex;
+            width: 30px;
+            height: 30px;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            font-size: 1.25rem;
+            color: #fff;
+            background-color: var(--text-color);
+            padding: .5rem;
+            border-radius: 50%;
+
+        }
+    }
+
+}
+
+@media screen and (min-width: 968px){
+    .form__img{
+        display: block;
+        width: 700px;
+        justify-self: center;
+    }
+
+    .form__content{
+        width: 320px;
+    }
+
+    .app{
+        padding: 0 2rem;
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .shape1 {
+        width: 400px;
+        height: 400px;
+        top: -11rem;
+        left: -6.5rem;
+    }
+
+    .shape2 {
+        width: 300px;
+        height: 300px;
+        right: -6.5rem;
+    }
+}

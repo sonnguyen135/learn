@@ -1,0 +1,245 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root{
+    --header-height: 3rem;
+    
+    /*===== Colores =====*/
+    --first-color: #3664F4;
+    --dark-color: #070D1F;
+    --dark-color-alt: #282B3A;
+    --white-color: #E6E7E9;
+
+    /*===== Fuente y tipografia =====*/
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+
+    /*===== z index =====*/
+    --z-fixed: 100;
+}
+:root{
+    @media screen and (min-width: 768px){
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+
+/* BASE */
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+/* LAYOUTS */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--dark-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+
+    &__toggle{
+        font-size: 1.5rem;
+        color: var(--white-color);
+        cursor: pointer;
+    }
+}
+
+.nav{
+    display: grid;
+    width: 100%;
+    @media screen and (max-width: 767px){
+        grid-template-columns: 100%;
+        align-content: space-between;
+        row-gap: 2rem;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        background-color: var(--dark-color);
+        padding: 1.5rem;
+        transition: all .5s;
+        grid-template-rows: max-content 1fr max-content;
+    
+        &__close{
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            padding: .25rem;
+            color: var(--white-color);
+            background-color: var(--dark-color-alt);
+            font-size: 1.3rem;
+            border-radius:50%;
+            cursor: pointer;
+        }
+
+        .active{
+            color: var(--first-color);
+        }
+       
+    }
+    &__img{
+        width: 56px;
+        height: 56px;
+        background-color: var(--first-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        padding-top: .25rem;
+        margin-bottom: .8rem;
+        overflow: hidden;
+
+        & img{
+            width: 46px;
+        }
+    }
+
+    &__name{
+        display: block;
+    }
+
+    &__profession{
+        color: var(--white-color);
+        font-size: var(--small-font-size);
+    }
+
+    &__menu{
+        align-self: center;
+    }
+
+    &__item{
+        margin: 2.5rem 0;
+    }
+
+    &__social{
+        padding-top: .5rem;
+        &-icon{
+            font-size: 1.2rem;
+            color: var(--white-color);
+            margin-right: 1rem;
+            &:hover{
+                color: var(--first-color);
+            }
+        }
+    }  
+    @media screen and (min-width: 768px){
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: max-content max-content max-content;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+        column-gap: 1rem;
+
+        &__list{
+            display: flex;
+        }
+
+        &__brand{
+            display: flex;
+            align-items: center;
+        }
+
+        &__profession,&__close{
+            display: none;
+        }
+
+        &__img{
+            width: 32px;
+            height: 32px;
+            margin-bottom: 0;
+            margin-right: .5rem;
+            & img{
+                width: 26px;
+            }
+        }
+
+        &__item{
+            margin: 0 .25rem;
+        }
+
+        &__menu{
+            justify-self: center;
+        }
+
+        &__list{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        &__link {
+            padding: .5rem .8rem;
+            border-radius: .25rem;
+            &:hover {
+                background-color: var(--first-color);
+            }
+        }
+
+        
+    }
+}
+
+.show{
+    left: 0;
+}
+
+@media screen and (min-width: 768px){
+    :root{
+        --header-height: 4rem;
+    }
+    .header{
+        &__logo{
+            display: none;
+        }
+
+        &__toggle{
+            display: none;
+        }
+    }
+
+    .active {
+        background-color: var(--first-color);
+        color: var(--white-color);
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .nav{
+        padding:0;
+    }
+    
+}

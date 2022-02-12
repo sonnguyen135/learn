@@ -1,0 +1,110 @@
+
+.cart{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    right: -100%;
+    bottom: 0;
+    background-color: var(--body-color);
+    padding: 3.5rem 2rem;
+    transition: .3s;
+    z-index: 101;
+
+
+    &__close{
+        position: absolute;
+        font-size: 2rem;
+        color: var(--title-color);
+        top: 1.25rem;
+        right: .9rem;
+        cursor: pointer;
+    }
+
+    &__title-center{
+        text-align: center;
+        font-size: var(--h2-font-size);
+        margin-bottom: var(--mb-3);
+    }
+
+    &__container{
+        display: grid;
+        row-gap: 1.5rem;
+    }
+
+    &__card{
+        display: flex;
+        column-gap: 1rem;
+        align-items: center;
+    }
+
+    &__box{
+        background-color: var(--container-color);
+        padding: .75rem 1.25rem;
+        border: 1px solid var(--border-color);
+    }
+
+    &__img{
+        width: 50px;
+    }
+
+    &__title{
+        font-size: var(--normal-font-size);
+        margin-bottom: .5rem;
+    }
+
+    &__price{
+        display: block;
+        font-size: var(--small-font-size);
+        color: var(--first-color);
+        margin-bottom: var(--mb-1-5);
+    }
+
+    &__amount{
+        display: flex;
+        column-gap: 3rem;
+        align-items: center;
+
+        &-content{
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+        }
+
+        &-box{
+            display: inline-flex;
+            padding: .25rem;
+            background-color: var(--container-color);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        &-trash{
+            color: var(--first-color);
+            font-size: 1.15rem;
+            cursor: pointer;
+        }
+    }
+
+    &__prices{
+        margin-top: 6rem;
+        display: flex;
+        justify-content: space-between;
+
+        &-item{
+            font-size: var(--small-font-size);
+        }
+
+        &-total{
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+        }
+
+        &-item, &-total{
+            color: var(--title-color);
+        }
+    }
+}
+
+.show-cart{
+    right: 0;
+}

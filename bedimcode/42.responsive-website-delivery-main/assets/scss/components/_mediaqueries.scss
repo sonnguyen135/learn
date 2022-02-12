@@ -1,0 +1,172 @@
+@media screen and (max-width: 360px){
+    .svg{
+        &__img{
+            width: 100%;
+        }
+    }
+
+    .section{
+        padding: 3.5rem 0 1rem;
+    }
+
+    .home{
+        padding-top: calc(3.5rem + var(--header-height));
+    }
+
+    .services{
+        &__img{
+            width: 100px;
+        }
+    }
+
+    .app{
+        &__buttons{
+            grid-template-columns: max-content;
+        }
+    }
+}
+
+@media screen and (min-width: 576px){
+    .home__container,
+    .about__container,
+    .security__container,
+    .app__container,
+    .contact__container{
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+    }
+
+    .home__img,
+    .about__data,
+    .app__data{
+        order: 1;
+    }
+
+    .about .section__title,
+    .about__description,
+    .security .section__title,
+    .security__description,
+    .app .section__title,
+    .app__description,
+    .contact .section__title,
+    .contact__description
+    {
+        text-align: initial;
+    }
+
+    .services__container,
+    .footer__container
+    {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .svg{
+        &__img{
+            width: 100%;
+        }
+    }
+}
+@mixin flex-column-gap($gap){
+    & > *{
+        margin-left: $gap;
+    }
+
+    & > *:first-child{
+        margin-left: 0;
+    }
+}
+@media screen and (min-width: 768px){
+    
+    .nav{
+        height: calc(var(--header-height) + 1.5rem);
+        
+        &__list{
+            display: flex;
+            align-items: center;
+
+            @include flex-column-gap(2.5rem);
+        }
+
+       
+
+        &__toggle{
+            display: none;
+        }
+    }
+
+    .change-theme{
+        position: initial;
+        margin-left: 2.5rem;
+    }
+
+    .section {
+        padding: 6rem 0 2rem;
+    }
+
+    .home__container{
+        padding: 6rem 0 2rem;
+    }
+
+    .app__buttons{
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (min-width: 968px){
+    .button__header{
+        display: block;
+    }
+
+    .about__container,
+    .security__container,
+    .app__container,
+    .contact__container{
+        column-gap: 6rem;
+    }
+
+    .services__container{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .contact__container{
+        grid-template-columns: 3fr 1.5fr 1.25fr;
+    }
+
+    .svg__img{
+        width: 470px;
+    }
+
+    .footer__container{
+        grid-template-columns: repeat(5,1fr);
+    }
+
+    .footer__socials-link {
+        font-size: 1.45rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home{
+        &__img{
+            width: 540px;
+        }
+
+        &__description{
+            padding-right: 5rem;
+        }
+    }
+
+    .scrollup {
+        right: 2rem;
+    }
+
+    .footer__container{
+        column-gap: 3rem;
+    }
+
+}
